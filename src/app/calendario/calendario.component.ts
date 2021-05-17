@@ -13,6 +13,7 @@ import { CalendarioModal2Component } from "./calendario-modal2/calendario-modal2
 import { BLACK_ON_WHITE_CSS_CLASS } from "@angular/cdk/a11y/high-contrast-mode/high-contrast-mode-detector";
 import { IdiomaService } from "app/services/idioma.service";
 import { TranslateService } from "@ngx-translate/core";
+import { environment } from "../../environments/environment.prod";
 @Component({
   selector: "app-calendario",
   templateUrl: "./calendario.component.html",
@@ -111,7 +112,7 @@ export class CalendarioComponent implements OnInit {
     var myFormDataa = new FormData();
 
     this.http
-      .post("http://localhost/load.php/", this.RegisterForm.value)
+      .post(`${environment.apiUrl}/load.php`, this.RegisterForm.value)
       .subscribe((res: any) => {
         console.log('se vuelven a cargar los registros nuevos');
         console.log(res);

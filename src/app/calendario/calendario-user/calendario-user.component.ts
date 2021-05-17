@@ -16,6 +16,7 @@ import { CalendarioModalComponent } from "../calendario-modal/calendario-modal.c
 import { CalendarioModal2Component } from "../calendario-modal2/calendario-modal2.component";
 import { Router } from "@angular/router";
 import { AuthService } from "app/services/auth.service";
+import { environment } from "../../../environments/environment.prod";
 
 @Component({
   selector: 'app-calendario-user',
@@ -102,7 +103,7 @@ export class CalendarioUserComponent implements OnInit {
 
 
     this.http
-      .post("http://localhost/load.php/", this.RegisterForm.value)
+      .post(`${environment.apiUrl}/load.php`, this.RegisterForm.value)
       .subscribe((res: any) => {
       
       console.log('se vuelven a cargar los registros nuevos');
