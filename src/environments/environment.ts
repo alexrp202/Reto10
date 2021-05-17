@@ -6,5 +6,5 @@
 export const environment = {
   production: false,
  
-  apiUrl: 'https://wellnesss.herokuapp.com/'
+  apiUrl: 'https://wellnesss.herokuapp.com'
 };
